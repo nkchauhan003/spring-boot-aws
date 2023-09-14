@@ -30,7 +30,6 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
             Optional<Map<String, String>> optionalMetaData,
             InputStream inputStream) {
         ObjectMetadata objectMetadata = new ObjectMetadata();
-
         optionalMetaData.ifPresent(map -> {
             if (!map.isEmpty()) {
                 map.forEach(objectMetadata::addUserMetadata);
